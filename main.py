@@ -12,7 +12,7 @@ openai.api_key = config('OPENAI_KEY')
 profile = webdriver.FirefoxProfile(r"C:\Users\helde\AppData\Roaming\Mozilla\Firefox\Profiles\70rtx7gn.default-release")
 driver = webdriver.Firefox(firefox_profile=profile)
 driver.get('https://web.whatsapp.com/')
-if input('Continuar? [y/n]') != 'y':
+if input('Continuar? [y/n]\n') != 'y':
     raise Exception('Break')
 
 def make_message_index(message_panel):
@@ -64,7 +64,7 @@ while True:
                 )
                 message_box = driver.find_elements(By.XPATH, '/html/body/div[1]/div/div/div[5]/div/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]')[0]
                 chatgpt_message = completion.choices[0].message.content
-                chatgpt_message.replace('Eu:', '')
+                chatgpt_message = chatgpt_message.replace('Eu:', '')
                 for key in chatgpt_message:
                     message_box.send_keys(key)
                 message_box.send_keys(Keys.ENTER)
