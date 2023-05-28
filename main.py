@@ -72,27 +72,3 @@ while True:
                 message_panel_reload = make_message_index(message_panel_reload)
     message_panel = message_panel_reload
     sleep(1)
-print(last_message)
-
-
-
-# import ipdb; ipdb.set_trace()
-#     if message_loaded_message != last_message:
-#         print(last_message)
-#         message_element = driver.find_elements(By.XPATH, '/html/body/div[1]/div/div/div[4]/div/div[2]/div[1]/div/div/div[1]/div/div/div/div[2]/div[2]/div[1]/span/span')
-#         message_element[0].click()
-#         message_loaded_message = message_element[0].text
-#         messages = []
-#         for mess in driver.find_elements(By.CLASS_NAME, 'focusable-list-item'):
-#             try:
-#                 this_message = mess.find_element(By.CLASS_NAME, 'copyable-text').text
-#             except:
-#                 continue
-#             if 'message-in' in mess.get_attribute('class'):
-#                 messages.append(f'Outra pessoa: {this_message}')
-#             elif 'message-out' in mess.get_attribute('class'):
-#                 messages.append(f'Eu: {this_message}')
-#             else:
-#                 import ipdb; ipdb.set_trace()
-#             print(messages)
-#     last_message = driver.find_elements(By.XPATH, '/html/body/div[1]/div/div/div[4]/div/div[2]/div[1]/div/div/div[1]/div/div/div/div[2]/div[2]/div[1]/span/span')[0].text
